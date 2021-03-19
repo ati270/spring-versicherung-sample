@@ -1,2 +1,2 @@
-# versicherung-sample-app
-Versicherung Sample Srping Boot app for Active Solution 
+# spring-versicherung-sample
+Versicherung Sample Spring Boot app for Active Solution 
