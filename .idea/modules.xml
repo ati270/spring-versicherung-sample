@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-versicherung-sample.iml" filepath="$PROJECT_DIR$/.idea/spring-versicherung-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-domain/spring-versicherung-sample-domain.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-domain/spring-versicherung-sample-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-gui/spring-versicherung-sample-gui.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-gui/spring-versicherung-sample-gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-model/spring-versicherung-sample-model.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-model/spring-versicherung-sample-model.iml" />
+    </modules>
+  </component>
+</project>

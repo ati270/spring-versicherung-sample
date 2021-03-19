@@ -1,0 +1,9 @@
+at\activesolution\entities\Person.class
+at\activesolution\entities\QVehicle.class
+at\activesolution\entities\QPerson.class
+at\activesolution\entities\ContractDetails$CONTRACT_STATUS.class
+at\activesolution\entities\ContractDetails$CONTRACT_TYPE.class
+at\activesolution\entities\ContractDetails.class
+at\activesolution\entities\QContract.class
+at\activesolution\entities\Vehicle.class
+at\activesolution\entities\Contract.class

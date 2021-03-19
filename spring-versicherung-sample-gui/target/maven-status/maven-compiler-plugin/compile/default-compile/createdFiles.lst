@@ -1,0 +1,4 @@
+at\activesolution\configuration\ApplicationPropertyConfiguration.class
+at\activesolution\main\Application.class
+at\activesolution\configuration\JpaConfiguration.class
+at\activesolution\controller\VersicherungSampleController.class

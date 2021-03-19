@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-versicherung-sample-domain" />
+        <module name="spring-versicherung-sample-gui" />
+        <module name="spring-versicherung-sample-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-versicherung-sample" target="8" />
+      <module name="spring-versicherung-sample-domain" target="8" />
+      <module name="spring-versicherung-sample-gui" target="8" />
+      <module name="spring-versicherung-sample-model" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
