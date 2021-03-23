@@ -1,34 +1,41 @@
 package at.activesolution.services.impl;
 
-import at.activesolution.entities.Contract;
-import at.activesolution.entities.Vehicle;
+import at.activesolution.entities.*;
 import at.activesolution.repositories.IVersicherungSampleRespository;
+import at.activesolution.repositories.custom.impl.CustomVersicherungSampleRepository;
 import at.activesolution.services.api.IVersicherungSampleService;
-import at.activesolution.entities.Person;
+import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class VersicherungSampleServiceImpl implements IVersicherungSampleService {
 
+    @PersistenceContext
+    private EntityManager entityManager;
+    private QPerson person =QPerson.person;
+    private QVehicle vehicle = QVehicle.vehicle;
+    private QContract contract = QContract.contract;
+    private JPAQuery jpaQuery;
+
+    VersicherungSampleServiceImpl(){ }
+
     @Autowired
     private IVersicherungSampleRespository versicherungSampleRepository;
 
-    @Override
-    public List<Person> getPersons() {
-        return versicherungSampleRepository.findAll();
-    }
+    @Autowired
+    private CustomVersicherungSampleRepository customVersicherungSampleRepository;
 
     @Override
-    public Optional<Person> getPersonById(Long id) {
-        return versicherungSampleRepository.findById(id);
+    public List<Person> getOnePersonMoreVehicles() {
+        return customVersicherungSampleRepository.getOnePersonMoreVehicles();
     }
+
 
 
 }

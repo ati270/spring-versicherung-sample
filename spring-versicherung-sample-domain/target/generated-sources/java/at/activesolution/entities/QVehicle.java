@@ -30,7 +30,7 @@ public class QVehicle extends EntityPathBase<Vehicle> {
 
     public final StringPath licensePlateNumber = createString("licensePlateNumber");
 
-    public final StringPath performance = createString("performance");
+    public final NumberPath<Double> perform = createNumber("perform", Double.class);
 
     public final QPerson person;
 

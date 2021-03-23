@@ -33,15 +33,7 @@ public class JpaConfiguration {
 
     protected static final String SPRING_HIBERNATE_DIALECT = "hibernate.dialect";
 
-    protected static final String SPRING_CACHE_EHCACHE_CONFIG = "spring.cache.ehcache.config";
-
-    protected static final String HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = "hibernate.cache.use_second_level_cache";
-
-    protected static final String SPRING_JPA_SHOW_SQL = "spring.jpa.show-sql";
-
-    protected static final String HIBERNATE_JOINED_TABLE_INHERITANCE = "hibernate.hql.bulk_id_strategy";
-
-    protected static final String SCHEMA_GENERATION_ACTION = "javax.persistence.schema-generation.database.action";
+    protected static final String SPRING_JPA_SHOW_SQL = "spring.jpa.show-sql=true";
 
     @Inject
     private ApplicationPropertyConfiguration applicationPropertyConfiguration;
@@ -56,7 +48,6 @@ public class JpaConfiguration {
         emf.setPersistenceUnitName(SPRINGBOOT);
         emf.setPackagesToScan(PACKAGES_TO_SCAN);
         emf.setJpaProperties(additionalProperties());
-        //emf.setMappingResources(MAPPING_RESOURCES);
         return emf;
     }
 
@@ -92,8 +83,6 @@ public class JpaConfiguration {
         properties.setProperty(SPRING_JPA_DATABASE_PLATFORM,
                 applicationPropertyConfiguration.getSpringJpaDatabasePlatform());
         properties.setProperty(SPRING_HIBERNATE_DIALECT, "org.hibernate.dialect.Oracle12cDialect");
-        properties.setProperty(HIBERNATE_JOINED_TABLE_INHERITANCE,
-                "org.hibernate.hql.spi.id.inline.InlineIdsInClauseBulkIdStrategy");
         properties.setProperty(SPRING_JPA_SHOW_SQL, applicationPropertyConfiguration.getSpringJpaShowSql());
         return properties;
     }

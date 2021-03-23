@@ -14,22 +14,30 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/persons")
 public class VersicherungSampleController {
 
     @Autowired
     private VersicherungSampleServiceImpl versicherungSampleService;
 
-    // GET requests
-    @GetMapping("")  //same as @RequestMapping
-    public List<Person> getPersons(){
-        return versicherungSampleService.getPersons();
-
+    @GetMapping("/test")
+    public String testMethod(){
+        return "Test text";
     }
+    // GET requests
+    /*@GetMapping("/")  //same as @RequestMapping
+    public List<Vehicle> getVehicles(){
+        return versicherungSampleService.getVehicles();
+    }*/
 
-    @GetMapping("/{id}")
-    public Optional<Person> getPerson(@PathVariable Long id){
+    /*@GetMapping("/persons/{id}")
+    public Optional<Person> getVehicle(@PathVariable Long id){
         return versicherungSampleService.getPersonById(id);
+    }*/
+
+
+    @GetMapping("/personswithvehicle")
+    public List<Person> getOnePersonMoreVehicles(){
+        return versicherungSampleService.getOnePersonMoreVehicles();
     }
     // POST requests
 

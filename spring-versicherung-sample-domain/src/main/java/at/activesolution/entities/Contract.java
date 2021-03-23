@@ -25,7 +25,6 @@ public class Contract {
     private double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Fetch(FetchMode.JOIN)
     @JoinColumn(name = "p_id")
     private Person person;
 

@@ -1,3 +1,5 @@
+at\activesolution\repositories\ICustomVersicherungSampleRepository.class
+at\activesolution\services\impl\VersicherungSampleServiceImpl.class
+at\activesolution\repositories\CustomVersicherungSampleRepository.class
 at\activesolution\repositories\IVersicherungSampleRespository.class
 at\activesolution\services\api\IVersicherungSampleService.class
-at\activesolution\services\impl\VersicherungSampleServiceImpl.class

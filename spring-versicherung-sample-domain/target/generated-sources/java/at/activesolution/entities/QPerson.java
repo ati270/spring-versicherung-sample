@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -34,6 +35,8 @@ public class QPerson extends EntityPathBase<Person> {
     public final StringPath identityNumber = createString("identityNumber");
 
     public final StringPath lastname = createString("lastname");
+
+    public final ListPath<Vehicle, QVehicle> vehicleList = this.<Vehicle, QVehicle>createList("vehicleList", Vehicle.class, QVehicle.class, PathInits.DIRECT2);
 
     public QPerson(String variable) {
         super(Person.class, forVariable(variable));

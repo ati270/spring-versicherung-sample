@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-versicherung-sample-domain" />
-        <module name="spring-versicherung-sample-gui" />
         <module name="spring-versicherung-sample-model" />
+        <module name="spring-versicherung-sample-db" />
+        <module name="spring-versicherung-sample-gui" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-versicherung-sample" target="8" />
+      <module name="spring-versicherung-sample-db" target="14" />
       <module name="spring-versicherung-sample-domain" target="8" />
       <module name="spring-versicherung-sample-gui" target="8" />
       <module name="spring-versicherung-sample-model" target="8" />

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-versicherung-sample.iml" filepath="$PROJECT_DIR$/.idea/spring-versicherung-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-db/spring-versicherung-sample-db.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-db/spring-versicherung-sample-db.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-domain/spring-versicherung-sample-domain.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-domain/spring-versicherung-sample-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-gui/spring-versicherung-sample-gui.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-gui/spring-versicherung-sample-gui.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-versicherung-sample-model/spring-versicherung-sample-model.iml" filepath="$PROJECT_DIR$/spring-versicherung-sample-model/spring-versicherung-sample-model.iml" />
