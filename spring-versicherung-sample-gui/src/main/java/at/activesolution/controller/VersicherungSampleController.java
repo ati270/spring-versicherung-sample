@@ -35,9 +35,9 @@ public class VersicherungSampleController {
     }*/
 
 
-    @GetMapping("/personswithvehicle")
-    public List<Person> getOnePersonMoreVehicles(){
-        return versicherungSampleService.getOnePersonMoreVehicles();
+    @GetMapping("/persons")
+    public List<Person> getPersonWithVehiclesAndContracts(){
+        return versicherungSampleService.getPersonWithVehiclesAndContracts();
     }
     // POST requests
 

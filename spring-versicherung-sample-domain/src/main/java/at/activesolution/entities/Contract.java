@@ -1,5 +1,6 @@
 package at.activesolution.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -24,9 +25,10 @@ public class Contract {
     @Column(name = "price")
     private double price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "p_id")
-    private Person person;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "P_ID")
+    @JsonBackReference
+    private Person contractPerson;
 
     public Contract(){}
 
@@ -70,11 +72,11 @@ public class Contract {
         this.price = price;
     }
 
-    public Person getPerson() {
-        return person;
+    public Person getContractPerson() {
+        return contractPerson;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setContractPerson(Person contractPerson) {
+        this.contractPerson = contractPerson;
     }
 }

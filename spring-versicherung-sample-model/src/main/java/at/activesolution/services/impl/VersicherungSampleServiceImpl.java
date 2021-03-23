@@ -32,8 +32,8 @@ public class VersicherungSampleServiceImpl implements IVersicherungSampleService
     private CustomVersicherungSampleRepository customVersicherungSampleRepository;
 
     @Override
-    public List<Person> getOnePersonMoreVehicles() {
-        return customVersicherungSampleRepository.getOnePersonMoreVehicles();
+    public List<Person> getPersonWithVehiclesAndContracts() {
+        return customVersicherungSampleRepository.getPersonWithVehiclesAndContracts();
     }
 
 

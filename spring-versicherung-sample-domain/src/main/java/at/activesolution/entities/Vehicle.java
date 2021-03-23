@@ -44,7 +44,7 @@ public class Vehicle {
     @ManyToOne(cascade = CascadeType.ALL)// lade es nur wenns benötigt(LAZY) sonst --> (default: eager)
     @JoinColumn(name = "P_ID")
     @JsonBackReference
-    private Person person;
+    private Person vehiclePerson;
 
     public Vehicle(){}
 
@@ -96,12 +96,20 @@ public class Vehicle {
         this.fuel = fuel;
     }
 
-    public Person getPerson() {
-        return person;
+    public double getPerform() {
+        return perform;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setPerform(double perform) {
+        this.perform = perform;
+    }
+
+    public Person getVehiclePerson() {
+        return vehiclePerson;
+    }
+
+    public void setVehiclePerson(Person vehiclePerson) {
+        this.vehiclePerson = vehiclePerson;
     }
 
     public double getPerformance() { return perform; }

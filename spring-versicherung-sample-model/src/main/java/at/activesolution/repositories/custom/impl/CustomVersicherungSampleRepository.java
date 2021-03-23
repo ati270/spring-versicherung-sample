@@ -20,7 +20,7 @@ public class CustomVersicherungSampleRepository implements ICustomVersicherungSa
     private EntityManager entityManager;
 
     @Override
-    public List<Person> getOnePersonMoreVehicles() {
+    public List<Person> getPersonWithVehiclesAndContracts() {
         final JPAQuery<Person> jpaQuery = new JPAQuery(entityManager);
         return jpaQuery.from(QPerson.person).select(QPerson.person).fetch();
     }

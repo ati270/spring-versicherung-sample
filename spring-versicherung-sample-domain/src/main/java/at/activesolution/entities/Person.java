@@ -43,10 +43,15 @@ public class Person {
     @Size(min = 3, max = 20, message = "ID number must be between 5 and 20 characters")
     private String identityNumber;
 
-    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehiclePerson", cascade = CascadeType.ALL)
     @Column(nullable = true)
     @JsonManagedReference
-    protected Set<Vehicle> vehicleList;
+    private Set<Vehicle> vehicles;
+
+    @OneToMany(mappedBy = "contractPerson", cascade = CascadeType.ALL)
+    @Column(nullable = true)
+    @JsonManagedReference
+    private Set<Contract> contracts;
 
 
     public Person(){}
@@ -115,11 +120,20 @@ public class Person {
         this.gender = gender;
     }
 
-    public Set<Vehicle> getVehicleList() {
-        return vehicleList;
+
+    /*public Set<Vehicle> getVehicles() {
+        return vehicles;
     }
 
-    public void setVehicleList(Set<Vehicle> vehicleList) {
-        this.vehicleList = vehicleList;
+    public void setVehicles(Set<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }*/
+
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
     }
 }

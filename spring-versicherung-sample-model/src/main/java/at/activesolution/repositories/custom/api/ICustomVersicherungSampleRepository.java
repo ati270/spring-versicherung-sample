@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface ICustomVersicherungSampleRepository {
 
-    List<Person> getOnePersonMoreVehicles();
+    List<Person> getPersonWithVehiclesAndContracts();
 }

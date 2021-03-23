@@ -11,5 +11,5 @@ import java.util.Optional;
 
 public interface IVersicherungSampleService {
 
-    List<Person> getOnePersonMoreVehicles();
+    List<Person> getPersonWithVehiclesAndContracts();
 }
