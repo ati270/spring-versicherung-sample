@@ -5,15 +5,14 @@ import at.activesolution.entities.Vehicle;
 import at.activesolution.services.impl.VersicherungSampleServiceImpl;
 import at.activesolution.entities.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping(value = "/persons")
 public class VersicherungSampleController {
 
     @Autowired
@@ -34,15 +33,28 @@ public class VersicherungSampleController {
         return versicherungSampleService.getPersonById(id);
     }*/
 
-
-    @GetMapping("/persons")
+    // GET requests
+    @GetMapping(value = "")
     public List<Person> getPersonWithVehiclesAndContracts(){
-        return versicherungSampleService.getPersonWithVehiclesAndContracts();
+        return versicherungSampleService.getPersonsWithVehiclesAndContracts();
     }
+
+    @GetMapping(value = "/id/{id}")
+    public Person getOnePersonWithVehiclesAndContractsById(@PathVariable Long id){
+        return versicherungSampleService.getOnePersonWithVehiclesAndContractsById(id);
+    }
+
+    @GetMapping(value = "/identitynumber/{identityNumber}")
+    public Person getOnePersonWithVehiclesAndContractsByIdentityNumber(@PathVariable String identityNumber){
+        return versicherungSampleService.getOnePersonWithVehiclesAndContractsByIdentityNumber(identityNumber);
+    }
+
     // POST requests
 
-    /*@PostMapping("")
-    public Person addPerson(){}*/
+    @PostMapping("")
+    public Person addPerson(@Valid @RequestBody Person person){
+        return versicherungSampleService.addPerson(person);
+    }
 
     /*@PostMapping("")
     public Contract addContract(){}*/

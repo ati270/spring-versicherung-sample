@@ -32,9 +32,9 @@ public class QVehicle extends EntityPathBase<Vehicle> {
 
     public final NumberPath<Double> perform = createNumber("perform", Double.class);
 
-    public final QPerson person;
-
     public final StringPath typeOfVehicle = createString("typeOfVehicle");
+
+    public final QPerson vehiclePerson;
 
     public final DateTimePath<java.util.Date> yearOfManufacture = createDateTime("yearOfManufacture", java.util.Date.class);
 
@@ -56,7 +56,7 @@ public class QVehicle extends EntityPathBase<Vehicle> {
 
     public QVehicle(Class<? extends Vehicle> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.person = inits.isInitialized("person") ? new QPerson(forProperty("person")) : null;
+        this.vehiclePerson = inits.isInitialized("vehiclePerson") ? new QPerson(forProperty("vehiclePerson")) : null;
     }
 
 }

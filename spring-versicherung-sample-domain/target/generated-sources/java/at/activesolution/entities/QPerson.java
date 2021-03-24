@@ -24,6 +24,8 @@ public class QPerson extends EntityPathBase<Person> {
 
     public final DateTimePath<java.util.Date> birthDate = createDateTime("birthDate", java.util.Date.class);
 
+    public final SetPath<Contract, QContract> contracts = this.<Contract, QContract>createSet("contracts", Contract.class, QContract.class, PathInits.DIRECT2);
+
     public final StringPath email = createString("email");
 
     public final StringPath firstname = createString("firstname");
@@ -36,7 +38,7 @@ public class QPerson extends EntityPathBase<Person> {
 
     public final StringPath lastname = createString("lastname");
 
-    public final ListPath<Vehicle, QVehicle> vehicleList = this.<Vehicle, QVehicle>createList("vehicleList", Vehicle.class, QVehicle.class, PathInits.DIRECT2);
+    public final SetPath<Vehicle, QVehicle> vehicles = this.<Vehicle, QVehicle>createSet("vehicles", Vehicle.class, QVehicle.class, PathInits.DIRECT2);
 
     public QPerson(String variable) {
         super(Person.class, forVariable(variable));

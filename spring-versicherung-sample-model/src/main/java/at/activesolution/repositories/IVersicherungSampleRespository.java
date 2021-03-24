@@ -14,8 +14,5 @@ import java.util.List;
 @Repository
 public interface IVersicherungSampleRespository  extends JpaRepository<Person, Long> {
 
-
-    @Query(value = "select v.PERFORM, P.ADDRESS from vehicle v inner join person P on v.P_ID = P.ID", nativeQuery = true)
-    public List<Vehicle> getVehicles();
 }
 

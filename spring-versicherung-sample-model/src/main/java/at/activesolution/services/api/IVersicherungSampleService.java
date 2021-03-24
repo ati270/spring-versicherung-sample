@@ -11,5 +11,11 @@ import java.util.Optional;
 
 public interface IVersicherungSampleService {
 
-    List<Person> getPersonWithVehiclesAndContracts();
+    List<Person> getPersonsWithVehiclesAndContracts();
+
+    Person getOnePersonWithVehiclesAndContractsById(Long id);
+
+    Person getOnePersonWithVehiclesAndContractsByIdentityNumber(String identityNumber);
+
+    Person addPerson(Person person);
 }

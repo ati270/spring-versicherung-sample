@@ -1,5 +1,6 @@
 package at.activesolution.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -25,7 +26,7 @@ public class Person {
     private String lastname;
 
     @Column(name = "birthdate")
-    @NotBlank(message = "Birthdate is mandatory")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private Date birthDate;
 
     @Column(name = "gender")
@@ -53,10 +54,9 @@ public class Person {
     @JsonManagedReference
     private Set<Contract> contracts;
 
-
     public Person(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

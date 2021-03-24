@@ -22,11 +22,11 @@ public class QContract extends EntityPathBase<Contract> {
 
     public static final QContract contract = new QContract("contract");
 
+    public final QPerson contractPerson;
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final StringPath paket = createString("paket");
-
-    public final QPerson person;
 
     public final NumberPath<Double> price = createNumber("price", Double.class);
 
@@ -52,7 +52,7 @@ public class QContract extends EntityPathBase<Contract> {
 
     public QContract(Class<? extends Contract> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.person = inits.isInitialized("person") ? new QPerson(forProperty("person")) : null;
+        this.contractPerson = inits.isInitialized("contractPerson") ? new QPerson(forProperty("contractPerson")) : null;
     }
 
 }

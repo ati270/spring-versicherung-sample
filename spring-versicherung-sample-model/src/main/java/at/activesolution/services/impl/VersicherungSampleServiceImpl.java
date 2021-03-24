@@ -32,10 +32,22 @@ public class VersicherungSampleServiceImpl implements IVersicherungSampleService
     private CustomVersicherungSampleRepository customVersicherungSampleRepository;
 
     @Override
-    public List<Person> getPersonWithVehiclesAndContracts() {
-        return customVersicherungSampleRepository.getPersonWithVehiclesAndContracts();
+    public List<Person> getPersonsWithVehiclesAndContracts() {
+        return customVersicherungSampleRepository.getPersonsWithVehiclesAndContracts();
     }
 
+    @Override
+    public Person getOnePersonWithVehiclesAndContractsById(Long id) {
+        return customVersicherungSampleRepository.getOnePersonWithVehiclesAndContractsById(id);
+    }
 
+    @Override
+    public Person getOnePersonWithVehiclesAndContractsByIdentityNumber(String identityNumber) {
+        return customVersicherungSampleRepository.getOnePersonWithVehiclesAndContractsByIdentityNumber(identityNumber);
+    }
 
+    @Override
+    public Person addPerson(Person person) {
+        return versicherungSampleRepository.save(person);
+    }
 }

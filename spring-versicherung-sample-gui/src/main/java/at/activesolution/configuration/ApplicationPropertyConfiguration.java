@@ -3,7 +3,6 @@ package at.activesolution.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 
 @Configuration
 @PropertySource(value = "classpath:application.properties", ignoreResourceNotFound = false)

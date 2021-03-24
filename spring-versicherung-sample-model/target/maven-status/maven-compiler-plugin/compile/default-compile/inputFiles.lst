@@ -1,5 +1,5 @@
+C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\repositories\custom\api\ICustomVersicherungSampleRepository.java
 C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\services\api\IVersicherungSampleService.java
 C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\services\impl\VersicherungSampleServiceImpl.java
-C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\repositories\ICustomVersicherungSampleRepository.java
-C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\repositories\CustomVersicherungSampleRepository.java
+C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\repositories\custom\impl\CustomVersicherungSampleRepository.java
 C:\dev-active\spring-versicherung-sample\spring-versicherung-sample-model\src\main\java\at\activesolution\repositories\IVersicherungSampleRespository.java
