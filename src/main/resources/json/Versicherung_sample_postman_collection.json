@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "9e8d6f0e-0c31-4221-97a4-920efbd8ac06",
+		"name": "Versicherung_sample",
+		"description": "Collection for CRUD requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET requests",
+			"item": [
+				{
+					"name": "GET PersonsWithVehiclesAndContracts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET OnePersonWithVehiclesAndContractsById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persons/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET OnePersonWithVehiclesAndContractsByIdentityNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persons/identitynumber/698555",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"identitynumber",
+								"698555"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST requests",
+			"item": [
+				{
+					"name": "POST PersonsWithVehiclesAndContracts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Attila\",\r\n    \"lastname\": \"Mustermann\",\r\n    \"birthDate\": \"1970/09/06\",\r\n    \"gender\": \"Male\",\r\n    \"address\": \"A - 3200 Graz\",\r\n    \"email\": \"max.mustermann@activesolution.at\",\r\n    \"identityNumber\": \"68959787\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/persons",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT requests",
+			"item": [
+				{
+					"name": "PUT updateFirstnamePersonById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/5/updateWithFirstname",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"5",
+								"updateWithFirstname"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE requests",
+			"item": [
+				{
+					"name": "DELETE  deletePersonById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/persons/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

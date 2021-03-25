@@ -222,7 +222,7 @@
                     <baselineOnMigrate>true</baselineOnMigrate>
                     <baselineVersion>1</baselineVersion>
                     <locations>filesystem:src/main/resources/db/migration</locations>
-                    <cleanDisabled>false</cleanDisabled>
+                    <cleanDisabled>true</cleanDisabled>
                 </configuration>
                 <dependencies>
                     <dependency>
