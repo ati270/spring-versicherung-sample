@@ -16,13 +16,6 @@ import java.util.Optional;
 @Service
 public class VersicherungSampleServiceImpl implements IVersicherungSampleService {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-    private QPerson person =QPerson.person;
-    private QVehicle vehicle = QVehicle.vehicle;
-    private QContract contract = QContract.contract;
-    private JPAQuery jpaQuery;
-
     VersicherungSampleServiceImpl(){ }
 
     @Autowired
@@ -47,7 +40,17 @@ public class VersicherungSampleServiceImpl implements IVersicherungSampleService
     }
 
     @Override
-    public Person addPerson(Person person) {
-        return versicherungSampleRepository.save(person);
+    public void addPerson(Person newPerson) {
+        customVersicherungSampleRepository.addPerson(newPerson);
+    }
+
+    @Override
+    public Person updatePersonFirstname(Long id, String newFirstname) {
+       return customVersicherungSampleRepository.updatePersonFirstname(id, newFirstname);
+    }
+
+    @Override
+    public void deletePerson(Long id) {
+        customVersicherungSampleRepository.deletePerson(id);
     }
 }

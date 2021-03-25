@@ -13,7 +13,8 @@ import java.util.*;
 @Table(name = "person", schema = "versicherung_sample")
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="PERSON_SEQ_GEN", sequenceName="person_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERSON_SEQ_GEN")
     @Column(name = "id")
     private Long id;
 
@@ -120,14 +121,13 @@ public class Person {
         this.gender = gender;
     }
 
-
-    /*public Set<Vehicle> getVehicles() {
+    public Set<Vehicle> getVehicles() {
         return vehicles;
     }
 
     public void setVehicles(Set<Vehicle> vehicles) {
         this.vehicles = vehicles;
-    }*/
+    }
 
     public Set<Contract> getContracts() {
         return contracts;

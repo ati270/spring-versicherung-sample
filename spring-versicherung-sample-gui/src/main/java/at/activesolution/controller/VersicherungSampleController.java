@@ -52,10 +52,19 @@ public class VersicherungSampleController {
     // POST requests
 
     @PostMapping("")
-    public Person addPerson(@Valid @RequestBody Person person){
-        return versicherungSampleService.addPerson(person);
+    public void addPerson(@Valid @RequestBody Person person){
+        versicherungSampleService.addPerson(person);
     }
 
-    /*@PostMapping("")
-    public Contract addContract(){}*/
+    // PUT requests
+    @PutMapping("/{id}/{firstname}")
+    public Person updatePersonFirstname(@PathVariable Long id, @PathVariable String firstname){
+       return versicherungSampleService.updatePersonFirstname(id, firstname);
+    }
+
+    // DELETE request
+    @DeleteMapping("/{id}")
+    public void deletePerson(@PathVariable Long id){
+        versicherungSampleService.deletePerson(id);
+    }
 }

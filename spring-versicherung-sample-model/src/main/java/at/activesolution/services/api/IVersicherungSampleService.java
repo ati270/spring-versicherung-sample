@@ -17,5 +17,9 @@ public interface IVersicherungSampleService {
 
     Person getOnePersonWithVehiclesAndContractsByIdentityNumber(String identityNumber);
 
-    Person addPerson(Person person);
+    void addPerson(Person newPerson);
+
+    Person updatePersonFirstname(Long id, String newFirstname);
+
+    void deletePerson(Long id);
 }

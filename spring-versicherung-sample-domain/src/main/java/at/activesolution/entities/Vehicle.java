@@ -18,7 +18,8 @@ import java.util.Date;
 public class Vehicle {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="VEHICLE_SEQ_GEN", sequenceName="vehicle_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="VEHICLE_SEQ_GEN")
     @Column(name = "id")
     private Long id;
 
@@ -110,11 +111,5 @@ public class Vehicle {
 
     public void setVehiclePerson(Person vehiclePerson) {
         this.vehiclePerson = vehiclePerson;
-    }
-
-    public double getPerformance() { return perform; }
-
-    public void setPerformance(double perform) {
-        this.perform = perform;
     }
 }

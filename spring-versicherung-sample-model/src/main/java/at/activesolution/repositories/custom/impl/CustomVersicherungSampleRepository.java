@@ -9,14 +9,13 @@ import org.hibernate.jpa.HibernateQuery;
 
 import javax.inject.Named;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.transaction.TransactionManager;
 import javax.transaction.Transactional;
 import javax.transaction.UserTransaction;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Named
 public class CustomVersicherungSampleRepository implements ICustomVersicherungSampleRepository {
@@ -47,30 +46,61 @@ public class CustomVersicherungSampleRepository implements ICustomVersicherungSa
 
     @Override
     @Transactional
-    public Person addPerson() {
-        Person newPerson = new Person();
+    public void addPerson(Person newPerson) {
+
         entityManager.persist(newPerson);
-        return newPerson;
+
+        /*Set<Vehicle> vehicles = new HashSet<Vehicle>();
+        Set<Contract> contracts = new HashSet<Contract>();
+
+        Person newPerson = new Person();
+        newPerson.setFirstname("TestFirstname");
+        newPerson.setLastname("testLastname");
+        newPerson.setEmail("testmail@mail.com");
+        newPerson.setBirthDate(new Date("1978/12/11"));
+        newPerson.setGender("Male");
+        newPerson.setIdentityNumber("245689875");
+        newPerson.setAddress("H - 1100 Budapest");
+        newPerson.setContracts(contracts);
+        newPerson.setVehicles(vehicles);
+
+        Vehicle newVehicle = new Vehicle();
+        newVehicle.setVehiclePerson(newPerson);
+        newVehicle.setColor("RED");
+        newVehicle.setLicensePlateNumber("TTT-345");
+        newVehicle.setTypeOfVehicle("Nissan");
+        newVehicle.setPerform(34);
+        newVehicle.setPerform(50);
+
+        Contract newContract = new Contract();
+        newContract.setContractPerson(newPerson);
+        newContract.setTypeOfContract("Kfz");
+        newContract.setPaket("Vollcasco");
+        newContract.setStatus("Vorschlag");
+        newContract.setPrice(80);
+
+        newPerson.getVehicles().add(newVehicle);
+        newPerson.getContracts().add(newContract);
+*/
     }
 
+    @Override
+    @Transactional
+    public Person updatePersonFirstname(Long id, String newFirstname) {
 
-    /*
-    insert into vehicle(licenseplatenumber, typeofvehicle, color, yearofmanufacture, fuel, perform, p_id)
-values ('KKK-999', 'Ford Mondeo', 'Yellow', TO_DATE('2017/09/03', 'yyyy/mm/dd'), 'diesel', 47, 25);
+        Person updatedPerson = entityManager.find(Person.class, id);
+        updatedPerson.setFirstname(newFirstname);
 
-commit;
+        entityManager.persist(updatedPerson);
 
-select * from vehicle;
+        return updatedPerson;
+    }
 
-insert into contract(status, typeofcontract, paket, price, p_id)
-values('Vorschlag', 'KFZ', 'Vollcasco', 12, 25);
+    @Override
+    @Transactional
+    public void deletePerson(Long id) {
+        Person deletedPerson = entityManager.find(Person.class, id);
 
-commit;
-
-select * from contract;
-
-insert into person(firstname, lastname, birthdate, gender, address, email, identitynumber)
-values('Attila', 'Mustermann', TO_DATE('1989/04/22', 'yyyy/mm/dd'), 'Male', 'H - 9200 Gyor', 'attila.mustermann@activesolution.at', '698555');
-
-     */
+        entityManager.remove(deletedPerson);
+    }
 }

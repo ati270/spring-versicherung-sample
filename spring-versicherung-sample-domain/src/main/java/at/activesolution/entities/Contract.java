@@ -10,9 +10,10 @@ import javax.persistence.*;
 @Table(name = "contract", schema = "versicherung_sample")
 public class Contract {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name="CONTRACT_SEQ_GEN", sequenceName="contract_seq", allocationSize=1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CONTRACT_SEQ_GEN")
+    @Column(name = "id")
     private Long id;
-
     @Column(name = "status")
     private String status;
 
